@@ -9,7 +9,7 @@ module.exports = function(app) {
         res.json(friends);
     });
 
-    // API POST Request
+    // API POST Request - add compatability function here
     app.post("/api/friends", function(req, res) {
         friends.push(req.body);
         res.json(friends);
