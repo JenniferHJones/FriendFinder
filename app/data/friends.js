@@ -114,22 +114,6 @@ var friendsArray = [
         ]
     },
     {
-        name: "Margo",
-        photo: "https://unsplash.com/photos/mEZ3PoFGs_k",
-        scores: [
-            3,
-            3,
-            3,
-            3,
-            3,
-            3,
-            3,
-            3,
-            3,
-            3
-        ]
-    },
-    {
         name: "Theo",
         photo: "https://unsplash.com/photos/wKOKidNT14w",
         scores: [
@@ -159,22 +143,6 @@ var friendsArray = [
             5,
             4,
             3
-        ]
-    },
-    {
-        name: "Mike",
-        photo: "https://unsplash.com/photos/zF8ss0qB_ik",
-        scores: [
-            1,
-            2,
-            1,
-            2,
-            3,
-            3,
-            2,
-            3,
-            1,
-            2
         ]
     },
     {

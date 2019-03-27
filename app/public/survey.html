@@ -14,25 +14,25 @@
 </head>
 
 <body>
-
+    <!-- Survey -->
     <div class="container">
         <h2>Survey Questions</h2>
         <hr>
         <h4 class="font-weight-bold">About You</h4>
         <div class="row">
             <div class="col-12">
-                <form method="POST" role="form">
+                <form method="POST" role="form" action="/api/friends">
                     <div class="form-group">
                         <label for="name">
                             <h5>Name (Required)</h5>
                         </label>
-                        <input type="text" class="form-control" id="name">
+                        <input type="text" class="form-control" id="name" name="name">
                     </div>
                     <div class="form-group">
                         <label for="name">
                             <h5>Link to Photo Image (Required)</h5>
                         </label>
-                        <input type="text" class="form-control" id="photo">
+                        <input type="text" class="form-control" id="photo" name="photo">
                     </div>
 
                     <hr>
@@ -43,7 +43,7 @@
                                 <h5 class="font-weight-bold">Question 1</h5>
                             </label>
                             <p>Your mind is always buzzing with unexplored ideas and plans.</p>
-                            <select class="form-control form-control-sm col-md-3">
+                            <select class="form-control form-control-sm col-md-3" name="question[]">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly disagree)</option>
                                 <option value="2">2</option>
@@ -57,7 +57,7 @@
                                 <h5 class="font-weight-bold">Question 2</h5>
                             </label>
                             <p>Generally speaking, you rely more on your experience than your imagination.</p>
-                            <select class="form-control form-control-sm col-md-3">
+                            <select class="form-control form-control-sm col-md-3" name="question[]">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly disagree)</option>
                                 <option value="2">2</option>
@@ -71,7 +71,7 @@
                                 <h5 class="font-weight-bold">Question 3</h5>
                             </label>
                             <p>You find it easy to stay relaxed and focused even when there is some pressure.</p>
-                            <select class="form-control form-control-sm col-md-3">
+                            <select class="form-control form-control-sm col-md-3" name="question[]">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly disagree)</option>
                                 <option value="2">2</option>
@@ -85,7 +85,7 @@
                                 <h5 class="font-weight-bold">Question 4</h5>
                             </label>
                             <p>You rarely do something just out of sheer curiosity.</p>
-                            <select class="form-control form-control-sm col-md-3">
+                            <select class="form-control form-control-sm col-md-3" name="question[]">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly disagree)</option>
                                 <option value="2">2</option>
@@ -99,7 +99,7 @@
                                 <h5 class="font-weight-bold">Question 5</h5>
                             </label>
                             <p>People can rarely upset you.</p>
-                            <select class="form-control form-control-sm col-md-3">
+                            <select class="form-control form-control-sm col-md-3" name="question[]">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly disagree)</option>
                                 <option value="2">2</option>
@@ -113,7 +113,7 @@
                                 <h5 class="font-weight-bold">Question 6</h5>
                             </label>
                             <p>It is often difficult for you to relate to other people’s feelings.</p>
-                            <select class="form-control form-control-sm col-md-3">
+                            <select class="form-control form-control-sm col-md-3" name="question[]">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly disagree)</option>
                                 <option value="2">2</option>
@@ -127,7 +127,7 @@
                                 <h5 class="font-weight-bold">Question 7</h5>
                             </label>
                             <p>In a discussion, truth should be more important than people’s sensitivities.</p>
-                            <select class="form-control form-control-sm col-md-3">
+                            <select class="form-control form-control-sm col-md-3" name="question[]">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly disagree)</option>
                                 <option value="2">2</option>
@@ -141,7 +141,7 @@
                                 <h5 class="font-weight-bold">Question 8</h5>
                             </label>
                             <p>You rarely get carried away by fantasies and ideas.</p>
-                            <select class="form-control form-control-sm col-md-3">
+                            <select class="form-control form-control-sm col-md-3" name="question[]">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly disagree)</option>
                                 <option value="2">2</option>
@@ -157,7 +157,7 @@
                             <p>You think that everyone’s views should be respected regardless of whether they are
                                 supported
                                 by facts or not.</p>
-                            <select class="form-control form-control-sm col-md-3">
+                            <select class="form-control form-control-sm col-md-3" name="question[]">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly disagree)</option>
                                 <option value="2">2</option>
@@ -171,7 +171,7 @@
                                 <h5 class="font-weight-bold">Question 10</h5>
                             </label>
                             <p>You feel more energetic after spending time with a group of people.</p>
-                            <select class="form-control form-control-sm col-md-3">
+                            <select class="form-control form-control-sm col-md-3" name="question[]">
                                 <option selected>Select an Option</option>
                                 <option value="1">1 (Strongly disagree)</option>
                                 <option value="2">2</option>
@@ -187,15 +187,44 @@
             </div>
         </div>
     </div>
-    <hr>
+    <!-- Modal for friend match -->
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="close">+</div>
+            <div class="modal-header mt-4">
+                <h3 class="modal-title">Best Match</h3>
+                <hr>
+                <div class="modal-body">
+                    <h3 class="matchName"></h3>
+                    <img class="matchPhoto" src="#">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p><a href="#">API Friends List</a> | <a href="#">GitHub Repo</a>
+            <p><a href="/api/friends">API Friends List</a> | <a
+                    href="https://jenniferhjones.github.io/FriendFinder/">GitHub Repo</a>
         </div>
     </footer>
 
-    </div>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 
+    <script type="text/javascript" src="logic.js"></script>
 
 </body>
 
