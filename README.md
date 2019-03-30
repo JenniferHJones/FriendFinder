@@ -5,7 +5,7 @@ This is a full-stack application that uses Node.js and Express server for the ba
 
 ---
 ## Live Demo
-This application is deployed to [Heroku](). 
+This application is deployed to [Heroku](https://damp-hamlet-64770.herokuapp.com/). 
 
 ---
 ## User Setup for Local Installation
