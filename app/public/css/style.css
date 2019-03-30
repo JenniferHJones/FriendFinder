@@ -6,9 +6,7 @@ body {
     background-image: linear-gradient(to right, white, #80bae2);
 }
 
-.bg-modal {
-    width: 100%;
-    height: 100%;
+#modalMatch {
     position: absolute;
     top: 0;
     display: flex;
@@ -18,12 +16,17 @@ body {
 }
 
 .modal-content {
-    width: 700px;
-    height: 500px;
+    width: 900px;
+    height: 900px;
     border-radius: 4px;
     text-align: center;
     padding: 20px;
     position: relative;
+}
+
+#matchPhoto {
+    width: 50%;
+    height: 50%;
 }
 
 .close {
@@ -31,5 +34,4 @@ body {
     top: 0;
     right: 14px;
     font-size: 42px;
-    transform: rotate(45deg);
 }

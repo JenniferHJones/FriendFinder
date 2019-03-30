@@ -1,17 +1,14 @@
 // front end javascript logic
-
 $(document).ready(function () {
-    // modal hidden until called by post function
-    // $(".bg-modal").hide();
 
     // event listener for clicking close button on modal
-    document.querySelector(".close").addEventListener("click", function() {
+    document.querySelector(".close").addEventListener("click", function () {
         document.querySelector(".bg-modal").style.display = "none";
     });
 
     // event listener for submit button on survey page
     $("#surveyBtn").on("click", function (event) {
-        console.log("button clicked");
+        // console.log("button clicked");
         event.preventDefault();
 
         // validate if all questions have been answered
@@ -28,7 +25,7 @@ $(document).ready(function () {
         };
 
         if (valid === true) {
-            var newFriend = {
+            var newUser = {
                 name: $("#name").val().trim(),
                 photo: $("#photo").val().trim(),
                 scores: [
@@ -44,10 +41,20 @@ $(document).ready(function () {
                     $("#quest10").val()
                 ]
             };
-            console.log(newFriend);
+            console.log(newUser.name);
+
+            // Use AJAX to post data to friends API
+            $.post("/api/friends", newUser, function (data) {
+                // take name and photo from post to display in modal
+                $("#matchName").text(data.name);
+                $("#matchPhoto").attr("src", data.photo);
+                // Show modal with match information
+                $("#modalMatch").modal("toggle");
+            });
         } else {
-            alert("All fields must be completed. Please enter missing information.")
+            alert("Please enter missing information. All fields must be complete.")
         }
+        return false;
     });
 
 })
