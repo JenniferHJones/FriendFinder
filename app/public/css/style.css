@@ -1,5 +1,6 @@
 .container {
     font-family: 'Assistant', sans-serif;
+    margin-top: 25px;
 }
 
 body {
@@ -17,7 +18,7 @@ body {
 
 .modal-content {
     width: 900px;
-    height: 900px;
+    height: auto;
     border-radius: 4px;
     text-align: center;
     padding: 20px;
